@@ -1,0 +1,15 @@
+/*
+/*/
+!/Classes/
+!/Resources/
+!/proj.android/
+/proj.android/*
+!/proj.android/app/
+/proj.android/app/*
+!/proj.android/app/AndroidManifest.xml
+!/proj.android/app/jni/
+/proj.android/app/jni/*
+!/proj.android/app/jni/Android.mk
+!/proj.android/app/jni/Application.mk
+!/.gitignore
+!/README.md
