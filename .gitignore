@@ -12,5 +12,6 @@
 !/proj.android/app/jni/
 /proj.android/app/jni/*
 
+!/CMakeLists.txt
 !/.gitignore
 !/README.md
