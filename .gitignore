@@ -11,6 +11,13 @@
 !/proj.android/app/AndroidManifest.xml
 !/proj.android/app/jni/
 /proj.android/app/jni/*
+!/proj.android/app/jni/hellocpp
+/proj.android/app/jni/hellocpp/*
+!/proj.android/app/jni/hellocpp/main.cpp
+
+!/proj.win32/
+/proj.win32/*
+!/proj.win32/main.cpp
 
 !/CMakeLists.txt
 !/.gitignore
