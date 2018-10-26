@@ -1,7 +1,9 @@
 #include "HolderButton.h"
 
-namespace Models {
+namespace HoldTheCoyote { namespace Models {
 
+    HolderButton::HolderButton() : Node(){
 
+    }
 
-}
+}}

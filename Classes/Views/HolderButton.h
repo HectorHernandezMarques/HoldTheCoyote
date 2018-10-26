@@ -8,16 +8,13 @@ namespace HoldTheCoyote { namespace Views {
     class HolderButton : public Node {
 
     public:
-        HolderButton() = default;
-
+        HolderButton(Models::Node &node, cocos2d::Scene &scene);
         ~HolderButton() = default;
 
         HolderButton(HolderButton const &rhs) = delete;
-
         HolderButton &operator=(HolderButton const &rhs) = delete;
 
         HolderButton(HolderButton &&rhs) noexcept = delete;
-
         HolderButton &operator=(HolderButton &&rhs) noexcept = delete;
 
     private:

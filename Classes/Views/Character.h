@@ -8,16 +8,13 @@ namespace HoldTheCoyote { namespace Views {
     class Character : public Node {
 
     public:
-        Character() = default;
-
+        Character(Models::Node &node, cocos2d::Scene &scene);
         ~Character() = default;
 
         Character(Character const &rhs) = delete;
-
         Character &operator=(Character const &rhs) = delete;
 
         Character(Character &&rhs) noexcept = delete;
-
         Character &operator=(Character &&rhs) noexcept = delete;
 
     private:

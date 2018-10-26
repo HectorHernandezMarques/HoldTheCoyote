@@ -7,6 +7,8 @@ add_library(CommonClasses
         HelloWorldScene.cpp
         )
 
+set_property(TARGET CommonClasses PROPERTY CXX_STANDARD 17)
+
 include(CocosBuildSet)
 if (NOT USE_COCOS_PREBUILT)
     add_subdirectory(${COCOS2DX_ROOT_PATH}/cocos ${ENGINE_BINARY_PATH}/cocos/core)

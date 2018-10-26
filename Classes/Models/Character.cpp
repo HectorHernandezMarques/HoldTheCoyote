@@ -1,7 +1,9 @@
 #include "Character.h"
 
-namespace Models {
+namespace HoldTheCoyote { namespace Models{
 
+    Character::Character() : Node(){
 
+    }
 
-}
+}}

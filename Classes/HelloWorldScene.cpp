@@ -94,12 +94,12 @@ namespace HoldTheCoyote {
         }
 
         Models::Character *characterModel = new Models::Character();
-        Views::Character *characterView = new Views::Character();
-        characterView->spawn(*this);
+        Views::Character *characterView = new Views::Character(*characterModel, *this);
+        //characterView->spawn();
 
         Models::HolderButton *holderButtonModel = new Models::HolderButton();
-        Views::HolderButton *holderButtonView = new Views::HolderButton();
-        holderButtonView->spawn(*this);
+        Views::HolderButton *holderButtonView = new Views::HolderButton(*holderButtonModel, *this);
+        //holderButtonView->spawn();
 
         return true;
     }
