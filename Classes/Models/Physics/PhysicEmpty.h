@@ -9,7 +9,13 @@ namespace HoldTheCoyote::Models::Physics {
     class PhysicEmpty : public Physic {
     public:
         PhysicEmpty();
-        virtual ~PhysicEmpty() = default;
+        ~PhysicEmpty() override = default;
+
+        PhysicEmpty(PhysicEmpty const &rhs) = delete;
+        PhysicEmpty &operator=(PhysicEmpty const &rhs) = delete;
+
+        PhysicEmpty(PhysicEmpty &&rhs) noexcept = delete;
+        PhysicEmpty &operator=(PhysicEmpty &&rhs) noexcept = delete;
 
     protected:
         cocos2d::PhysicsBody &init();

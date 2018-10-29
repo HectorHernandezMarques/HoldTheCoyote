@@ -23,7 +23,7 @@ namespace HoldTheCoyote::Models {
         Node(cocos2d::Vec2 position = cocos2d::Vec2::ZERO, cocos2d::Vec2 anchorPoint = cocos2d::Vec2::ZERO,
              std::string texture = "", float rotation = 0.0,
              Physics::Physic *physic = new Physics::PhysicEmpty());
-        ~Node() = default;
+        virtual ~Node() = default;
 
         Node(Node const &rhs) = delete;
         Node &operator=(Node const &rhs) = delete;

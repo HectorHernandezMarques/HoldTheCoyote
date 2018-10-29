@@ -10,10 +10,6 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     public:
         virtual void visit(Views::Node &node) = 0;
 
-    protected:
-
-    private:
-
     };
 }
 

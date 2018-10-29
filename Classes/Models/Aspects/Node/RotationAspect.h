@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         RotationAspect(float rotation);
         virtual ~RotationAspect() = default;
 
+        RotationAspect(RotationAspect const &rhs) = delete;
+        RotationAspect &operator=(RotationAspect const &rhs) = delete;
+
+        RotationAspect(RotationAspect &&rhs) noexcept = delete;
+        RotationAspect &operator=(RotationAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

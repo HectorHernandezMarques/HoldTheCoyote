@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         TextureAspect(std::string texture);
         virtual ~TextureAspect() = default;
 
+        TextureAspect(TextureAspect const &rhs) = delete;
+        TextureAspect &operator=(TextureAspect const &rhs) = delete;
+
+        TextureAspect(TextureAspect &&rhs) noexcept = delete;
+        TextureAspect &operator=(TextureAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

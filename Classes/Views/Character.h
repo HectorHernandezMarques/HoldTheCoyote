@@ -9,7 +9,7 @@ namespace HoldTheCoyote::Views {
 
     public:
         Character(Models::Node &node, cocos2d::Scene &scene);
-        ~Character() = default;
+        ~Character() override = default;
 
         Character(Character const &rhs) = delete;
         Character &operator=(Character const &rhs) = delete;

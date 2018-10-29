@@ -9,7 +9,7 @@ namespace HoldTheCoyote::Models {
 
     public:
         HolderButton();
-        ~HolderButton() = default;
+        ~HolderButton() override = default;
 
         HolderButton(HolderButton const &rhs) = delete;
         HolderButton &operator=(HolderButton const &rhs) = delete;

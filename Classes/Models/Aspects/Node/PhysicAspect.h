@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         PhysicAspect(cocos2d::PhysicsBody &physicBody);
         virtual ~PhysicAspect() = default;
 
+        PhysicAspect(PhysicAspect const &rhs) = delete;
+        PhysicAspect &operator=(PhysicAspect const &rhs) = delete;
+
+        PhysicAspect(PhysicAspect &&rhs) noexcept = delete;
+        PhysicAspect &operator=(PhysicAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         RunActionAspect(cocos2d::Action *action);
         virtual ~RunActionAspect();
 
+        RunActionAspect(RunActionAspect const &rhs) = delete;
+        RunActionAspect &operator=(RunActionAspect const &rhs) = delete;
+
+        RunActionAspect(RunActionAspect &&rhs) noexcept = delete;
+        RunActionAspect &operator=(RunActionAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

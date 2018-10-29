@@ -10,6 +10,12 @@ namespace HoldTheCoyote::Models::Physics {
         Physic(cocos2d::PhysicsBody &physic);
         virtual ~Physic() = default;
 
+        Physic(Physic const &rhs) = delete;
+        Physic &operator=(Physic const &rhs) = delete;
+
+        Physic(Physic &&rhs) noexcept = delete;
+        Physic &operator=(Physic &&rhs) noexcept = delete;
+
         cocos2d::PhysicsBody &getPhysic();
         cocos2d::Vec2 getVelocity();
         void setDynamic(bool dynamic);

@@ -14,7 +14,7 @@ namespace HoldTheCoyote::Views {
 
     public:
         Node(Models::Node &node, cocos2d::Scene &scene);
-        ~Node() = default;
+        virtual ~Node() = default;
 
         Node(Node const &rhs) = delete;
         Node &operator=(Node const &rhs) = delete;

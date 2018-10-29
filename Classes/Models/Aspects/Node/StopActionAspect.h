@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         StopActionAspect(cocos2d::Action *animationAction);
         virtual ~StopActionAspect() = default;
 
+        StopActionAspect(StopActionAspect const &rhs) = delete;
+        StopActionAspect &operator=(StopActionAspect const &rhs) = delete;
+
+        StopActionAspect(StopActionAspect &&rhs) noexcept = delete;
+        StopActionAspect &operator=(StopActionAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

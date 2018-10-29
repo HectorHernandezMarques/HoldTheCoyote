@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         AddEventListenerWithSceneGraphPriorityAspect(cocos2d::EventListener *listener);
         virtual ~AddEventListenerWithSceneGraphPriorityAspect() = default;
 
+        AddEventListenerWithSceneGraphPriorityAspect(AddEventListenerWithSceneGraphPriorityAspect const &rhs) = delete;
+        AddEventListenerWithSceneGraphPriorityAspect &operator=(AddEventListenerWithSceneGraphPriorityAspect const &rhs) = delete;
+
+        AddEventListenerWithSceneGraphPriorityAspect(AddEventListenerWithSceneGraphPriorityAspect &&rhs) noexcept = delete;
+        AddEventListenerWithSceneGraphPriorityAspect &operator=(AddEventListenerWithSceneGraphPriorityAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

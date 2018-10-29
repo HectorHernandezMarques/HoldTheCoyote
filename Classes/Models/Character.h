@@ -9,7 +9,7 @@ namespace HoldTheCoyote::Models {
 
     public:
         Character();
-        ~Character() = default;
+        ~Character() override = default;
 
         Character(Character const &rhs) = delete;
         Character &operator=(Character const &rhs) = delete;

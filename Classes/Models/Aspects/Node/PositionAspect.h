@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         PositionAspect(cocos2d::Vec2 &position);
         virtual ~PositionAspect() = default;
 
+        PositionAspect(PositionAspect const &rhs) = delete;
+        PositionAspect &operator=(PositionAspect const &rhs) = delete;
+
+        PositionAspect(PositionAspect &&rhs) noexcept = delete;
+        PositionAspect &operator=(PositionAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

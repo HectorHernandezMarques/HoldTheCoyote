@@ -12,6 +12,12 @@ namespace HoldTheCoyote::Models::Aspects::Node {
         AnchorPointAspect(cocos2d::Vec2 anchorPoint);
         virtual ~AnchorPointAspect() = default;
 
+        AnchorPointAspect(AnchorPointAspect const &rhs) = delete;
+        AnchorPointAspect &operator=(AnchorPointAspect const &rhs) = delete;
+
+        AnchorPointAspect(AnchorPointAspect &&rhs) noexcept = delete;
+        AnchorPointAspect &operator=(AnchorPointAspect &&rhs) noexcept = delete;
+
         void visit(Views::Node &node) override;
 
     protected:

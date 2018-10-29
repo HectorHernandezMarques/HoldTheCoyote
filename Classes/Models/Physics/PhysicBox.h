@@ -9,7 +9,13 @@ namespace HoldTheCoyote::Models::Physics {
     class PhysicBox : public Physic {
     public:
         PhysicBox(int bitmask, cocos2d::Size size);
-        virtual ~PhysicBox() = default;
+        ~PhysicBox() override = default;
+
+        PhysicBox(PhysicBox const &rhs) = delete;
+        PhysicBox &operator=(PhysicBox const &rhs) = delete;
+
+        PhysicBox(PhysicBox &&rhs) noexcept = delete;
+        PhysicBox &operator=(PhysicBox &&rhs) noexcept = delete;
 
     protected:
         cocos2d::PhysicsBody &init(int bitmask, cocos2d::Size &size);
