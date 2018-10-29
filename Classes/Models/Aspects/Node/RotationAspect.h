@@ -5,27 +5,21 @@
 #include "Aspect.h"
 #include "../../../Views/Node.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				class RotationAspect : virtual public Aspect {
-				public:
-					RotationAspect(float rotation);
-					virtual ~RotationAspect();
+    class RotationAspect : virtual public Aspect {
+    public:
+        RotationAspect(float rotation);
+        virtual ~RotationAspect() = default;
 
-					void visit(Views::Node &node);
+        void visit(Views::Node &node) override;
 
-				protected:
+    protected:
 
-				private:
-					float rotation;
+    private:
+        float rotation;
 
-				};
-			}
-		}
-	}
+    };
 }
 
 #endif

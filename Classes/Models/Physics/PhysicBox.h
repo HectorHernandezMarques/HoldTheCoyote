@@ -4,25 +4,20 @@
 #include <cocos2d.h>
 #include "Physic.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Physics {
+namespace HoldTheCoyote::Models::Physics {
 
-			class PhysicBox : public Physic
-			{
-			public:
-				PhysicBox(int bitmask, cocos2d::Size size);
-				virtual ~PhysicBox();
+    class PhysicBox : public Physic {
+    public:
+        PhysicBox(int bitmask, cocos2d::Size size);
+        virtual ~PhysicBox() = default;
 
-			protected:
-				cocos2d::PhysicsBody& init(int bitmask, cocos2d::Size &size);
+    protected:
+        cocos2d::PhysicsBody &init(int bitmask, cocos2d::Size &size);
 
-			private:
-				cocos2d::Size size;
+    private:
+        cocos2d::Size size;
 
-			};
-		}
-	}
+    };
 }
 
 #endif

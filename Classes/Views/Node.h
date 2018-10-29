@@ -4,10 +4,8 @@
 #include <cocos2d.h>
 #include "../Models/Observers/NodeObserver.h"
 
-namespace HoldTheCoyote {
-    namespace Models {
-        class Node;
-    }
+namespace HoldTheCoyote::Models {
+    class Node;
 }
 
 namespace HoldTheCoyote::Views {

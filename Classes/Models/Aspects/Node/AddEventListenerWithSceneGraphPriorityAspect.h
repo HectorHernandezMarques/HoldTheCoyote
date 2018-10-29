@@ -5,26 +5,20 @@
 #include "Aspect.h"
 #include "../../../Views/Node.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				class AddEventListenerWithSceneGraphPriorityAspect : virtual public Aspect {
-				public:
-					AddEventListenerWithSceneGraphPriorityAspect(cocos2d::EventListener *listener);
-					virtual ~AddEventListenerWithSceneGraphPriorityAspect();
+    class AddEventListenerWithSceneGraphPriorityAspect : virtual public Aspect {
+    public:
+        AddEventListenerWithSceneGraphPriorityAspect(cocos2d::EventListener *listener);
+        virtual ~AddEventListenerWithSceneGraphPriorityAspect() = default;
 
-					void visit(Views::Node &node);
+        void visit(Views::Node &node) override;
 
-				protected:
+    protected:
 
-				private:
-					cocos2d::EventListener *listener;
-				};
-			}
-		}
-	}
+    private:
+        cocos2d::EventListener *listener;
+    };
 }
 
 #endif

@@ -4,22 +4,17 @@
 #include <cocos2d.h>
 #include "Physic.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Physics {
+namespace HoldTheCoyote::Models::Physics {
 
-			class PhysicPolygon : public Physic
-			{
-			public:
-				PhysicPolygon(int bitmask, std::list<cocos2d::Vec2> &points);
-				virtual ~PhysicPolygon();
+    class PhysicPolygon : public Physic {
+    public:
+        PhysicPolygon(int bitmask, std::list<cocos2d::Vec2> &points);
+        virtual ~PhysicPolygon() = default;
 
-			protected:
-				cocos2d::PhysicsBody& init(int bitmask, std::list<cocos2d::Vec2> &points);
+    protected:
+        cocos2d::PhysicsBody &init(int bitmask, std::list<cocos2d::Vec2> &points);
 
-			};
-		}
-	}
+    };
 }
 
 #endif

@@ -4,23 +4,17 @@
 #include <cocos2d.h>
 #include "../../../Views/Node.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				class Aspect {
-				public:
-					virtual void visit(Views::Node &node) = 0;
+    class Aspect {
+    public:
+        virtual void visit(Views::Node &node) = 0;
 
-				protected:
+    protected:
 
-				private:
+    private:
 
-				};
-			}
-		}
-	}
+    };
 }
 
 #endif

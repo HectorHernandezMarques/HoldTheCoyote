@@ -4,6 +4,8 @@ add_library(physics
         PhysicEmpty.cpp
         PhysicPolygon.cpp)
 
+set_property(TARGET physics PROPERTY CXX_STANDARD 17)
+
 include(CocosBuildSet)
 
 target_link_libraries(physics

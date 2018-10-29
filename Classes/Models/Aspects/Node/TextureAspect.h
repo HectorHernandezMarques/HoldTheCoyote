@@ -5,26 +5,20 @@
 #include "Aspect.h"
 #include "../../../Views/Node.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				class TextureAspect : virtual public Aspect {
-				public:
-					TextureAspect(std::string texture);
-					virtual ~TextureAspect();
+    class TextureAspect : virtual public Aspect {
+    public:
+        TextureAspect(std::string texture);
+        virtual ~TextureAspect() = default;
 
-					void visit(Views::Node &node);
+        void visit(Views::Node &node) override;
 
-				protected:
+    protected:
 
-				private:
-					std::string texture;
-				};
-			}
-		}
-	}
+    private:
+        std::string texture;
+    };
 }
 
 #endif

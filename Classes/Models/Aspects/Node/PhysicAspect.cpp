@@ -1,21 +1,11 @@
 #include "PhysicAspect.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				PhysicAspect::PhysicAspect(cocos2d::PhysicsBody &physicBody) : physicBody(physicBody) {
-				}
+    PhysicAspect::PhysicAspect(cocos2d::PhysicsBody &physicBody) : physicBody(physicBody) {
+    }
 
-				PhysicAspect::~PhysicAspect() {
-
-				}
-
-				void PhysicAspect::visit(Views::Node &node) {
-					node.setPhysic(this->physicBody);
-				}
-			}
-		}
-	}
+    void PhysicAspect::visit(Views::Node &node) {
+        node.setPhysic(this->physicBody);
+    }
 }

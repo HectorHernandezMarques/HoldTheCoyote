@@ -5,26 +5,20 @@
 #include "Aspect.h"
 #include "../../../Views/Node.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				class PositionAspect : virtual public Aspect {
-				public:
-					PositionAspect(cocos2d::Vec2 &position);
-					virtual ~PositionAspect();
+    class PositionAspect : virtual public Aspect {
+    public:
+        PositionAspect(cocos2d::Vec2 &position);
+        virtual ~PositionAspect() = default;
 
-					void visit(Views::Node &node);
+        void visit(Views::Node &node) override;
 
-				protected:
+    protected:
 
-				private:
-					cocos2d::Vec2 &position;
-				};
-			}
-		}
-	}
+    private:
+        cocos2d::Vec2 &position;
+    };
 }
 
 #endif

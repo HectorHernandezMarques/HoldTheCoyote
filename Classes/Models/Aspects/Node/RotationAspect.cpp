@@ -1,21 +1,11 @@
 #include "RotationAspect.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				RotationAspect::RotationAspect(float rotation) : rotation(rotation){
-				}
+    RotationAspect::RotationAspect(float rotation) : rotation(rotation) {
+    }
 
-				RotationAspect::~RotationAspect() {
-
-				}
-
-				void RotationAspect::visit(Views::Node &node) {
-					node.setRotation(this->rotation);
-				}
-			}
-		}
-	}
+    void RotationAspect::visit(Views::Node &node) {
+        node.setRotation(this->rotation);
+    }
 }

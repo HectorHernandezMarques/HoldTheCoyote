@@ -3,7 +3,7 @@
 
 #include "Node.h"
 
-namespace HoldTheCoyote { namespace Models {
+namespace HoldTheCoyote::Models {
 
     class HolderButton : public Node {
 
@@ -21,6 +21,6 @@ namespace HoldTheCoyote { namespace Models {
 
     };
 
-}}
+}
 
 #endif

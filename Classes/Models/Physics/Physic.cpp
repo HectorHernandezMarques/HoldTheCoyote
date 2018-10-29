@@ -1,79 +1,71 @@
 #include "Physic.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Physics {
+namespace HoldTheCoyote::Models::Physics {
 
-			Physic::Physic(cocos2d::PhysicsBody &physic) : physic(physic) {
-				assert(&physic);
-			}
+    Physic::Physic(cocos2d::PhysicsBody &physic) : physic(physic) {
+        assert(&physic);
+    }
 
+    cocos2d::PhysicsBody &Physic::getPhysic() {
+        assert(&this->physic);
 
-			Physic::~Physic() {
-			}
+        return this->physic;
+    }
 
-			cocos2d::PhysicsBody& Physic::getPhysic() {
-				assert(&this->physic);
+    cocos2d::Vec2 Physic::getVelocity() {
+        assert(&this->physic);
 
-				return this->physic;
-			}
+        return this->physic.getVelocity();
+    }
 
-			cocos2d::Vec2 Physic::getVelocity() {
-				assert(&this->physic);
+    void Physic::setDynamic(bool dynamic) {
 
-				return this->physic.getVelocity();
-			}
+        this->physic.setDynamic(dynamic);
+    }
 
-			void Physic::setDynamic(bool dynamic) {
+    void Physic::setCategoryBitmask(int bitmask) {
+        assert(&this->physic);
 
-				this->physic.setDynamic(dynamic);
-			}
+        this->physic.setCategoryBitmask(bitmask);
 
-			void Physic::setCategoryBitmask(int bitmask) {
-				assert(&this->physic);
+    }
 
-				this->physic.setCategoryBitmask(bitmask);
+    void Physic::setCollisionBitmask(int bitmask) {
+        assert(&this->physic);
 
-			}
+        this->physic.setCollisionBitmask(bitmask);
+    }
 
-			void Physic::setCollisionBitmask(int bitmask) {
-				assert(&this->physic);
+    void Physic::setContactTestBitmask(int bitmask) {
+        assert(&this->physic);
 
-				this->physic.setCollisionBitmask(bitmask);
-			}
+        this->physic.setContactTestBitmask(bitmask);
+    }
 
-			void Physic::setContactTestBitmask(int bitmask) {
-				assert(&this->physic);
+    void Physic::setRotationEnable(bool enable) {
+        assert(&this->physic);
 
-				this->physic.setContactTestBitmask(bitmask);
-			}
+        this->physic.setRotationEnable(enable);
+    }
 
-			void Physic::setRotationEnable(bool enable) {
-				assert(&this->physic);
+    void Physic::setVelocity(cocos2d::Vec2 velocity) {
+        assert(&this->physic);
+        assert(&velocity);
 
-				this->physic.setRotationEnable(enable);
-			}
+        this->physic.setVelocity(velocity);
+    }
 
-			void Physic::setVelocity(cocos2d::Vec2 velocity) {
-				assert(&this->physic);
-				assert(&velocity);
+    void Physic::setVelocityLimit(float velocity) {
+        assert(&this->physic);
 
-				this->physic.setVelocity(velocity);
-			}
+        this->physic.setVelocityLimit(velocity);
+    }
 
-			void Physic::setVelocityLimit(float velocity) {
-				assert(&this->physic);
+    void Physic::setFriction(float friction) {
+        assert(&this->physic);
 
-				this->physic.setVelocityLimit(velocity);
-			}
-
-			void Physic::setFriction(float friction) {
-				assert(&this->physic);
-
-				for (auto it = this->physic.getShapes().begin(); it != this->physic.getShapes().end(); ++it) {
-					(*it)->setFriction(friction);
-				}
-			}
-		}
-	}
+        for (auto it = this->physic.getShapes().begin(); it != this->physic.getShapes().end(); ++it) {
+            (*it)->setFriction(friction);
+        }
+    }
 }
