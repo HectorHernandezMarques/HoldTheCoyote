@@ -29,6 +29,10 @@ set(APP_NAME HoldTheCoyote)
 
 project(${APP_NAME})
 
+if (NOT ANDROID)
+    set(CMAKE_CXX_STANDARD 17)
+endif()
+
 set(COCOS2DX_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cocos2d)
 set(CMAKE_MODULE_PATH ${COCOS2DX_ROOT_PATH}/cmake/Modules/)
 
@@ -107,11 +111,10 @@ set(all_code_files
         )
 if (NOT ANDROID)
     add_executable(${APP_NAME} ${all_code_files})
-    set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD 17)
+    #set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD 17)
     #add_subdirectory(test)
 else ()
     add_library(${APP_NAME} SHARED ${all_code_files})
-    set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD 17)
     add_subdirectory(${COCOS2DX_ROOT_PATH}/cocos/platform/android ${ENGINE_BINARY_PATH}/cocos/platform)
     target_link_libraries(${APP_NAME} PRIVATE -Wl,--whole-archive cpp_android_spec -Wl,--no-whole-archive)
 endif ()

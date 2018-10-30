@@ -4,7 +4,7 @@ add_library(Views
         Node.cpp
         )
 
-set_property(TARGET Views PROPERTY CXX_STANDARD 17)
+#set_property(TARGET Views PROPERTY CXX_STANDARD 17)
 
 target_include_directories(Views
         PRIVATE

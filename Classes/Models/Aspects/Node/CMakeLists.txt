@@ -9,7 +9,7 @@ add_library(node_aspects
         TextureAspect.cpp
         )
 
-set_property(TARGET node_aspects PROPERTY CXX_STANDARD 17)
+#set_property(TARGET node_aspects PROPERTY CXX_STANDARD 17)
 
 include(CocosBuildSet)
 
