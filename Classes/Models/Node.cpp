@@ -1,4 +1,5 @@
 #include "Node.h"
+#include <EngineFactory.h>
 
 namespace HoldTheCoyote::Models {
 
@@ -34,8 +35,8 @@ namespace HoldTheCoyote::Models {
         this->notify(*(new Aspects::Node::RunActionAspect(action)));
     }
 
-    void Node::addEventListenerWithSceneGraphPriority(cocos2d::EventListener *listener) {
-        assert(listener);
+    void Node::addEventListenerWithSceneGraphPriority(cocos2d::EventListener &listener) {
+        assert(&listener);
 
         this->notify(*(new Aspects::Node::AddEventListenerWithSceneGraphPriorityAspect(listener)));
     }
@@ -74,13 +75,13 @@ namespace HoldTheCoyote::Models {
         return *this->physic;
     }
 
-    cocos2d::PhysicsBody &Node::getPhysicBody() {
+    EngineAbstraction::PhysicsBody &Node::getPhysicBody() {
         assert(this->physic);
 
         return this->physic->getPhysic();
     }
 
-    cocos2d::Vec2 Node::getVelocity() {
+    EngineAbstraction::Vec2 Node::getVelocity() {
         assert(this->physic);
 
         return this->physic->getVelocity();
@@ -143,7 +144,7 @@ namespace HoldTheCoyote::Models {
         this->notify(*(new Aspects::Node::PhysicAspect(this->physic->getPhysic())));
     }
 
-    void Node::setVelocity(cocos2d::Vec2 velocity) {
+    void Node::setVelocity(EngineAbstraction::Vec2 velocity) {
         assert(&velocity);
 
         this->physic->setVelocity(velocity);

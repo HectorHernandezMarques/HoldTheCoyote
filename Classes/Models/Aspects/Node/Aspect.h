@@ -9,7 +9,6 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     class Aspect {
     public:
         virtual void visit(Views::Node &node) = 0;
-
     };
 }
 

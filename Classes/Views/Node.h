@@ -2,6 +2,7 @@
 #define HOLDTHECOYOTE_VIEWS_NODE_H
 
 #include <cocos2d.h>
+#include "../EngineAbstraction/Interfaces/PhysicsBody.h"
 #include "../Models/Observers/NodeObserver.h"
 
 namespace HoldTheCoyote::Models {
@@ -13,6 +14,7 @@ namespace HoldTheCoyote::Views {
     class Node : virtual public Models::Observers::NodeObserver {
 
     public:
+        Node() = default;
         Node(Models::Node &node, cocos2d::Scene &scene);
         virtual ~Node() = default;
 
@@ -32,7 +34,7 @@ namespace HoldTheCoyote::Views {
         void setRotation(float rotation);
         void setAnchorPoint(cocos2d::Vec2 anchorPoint);
         void setTexture(std::string texture);
-        void setPhysic(cocos2d::PhysicsBody &physicBody);
+        void setPhysic(EngineAbstraction::PhysicsBody &physicBody);
         cocos2d::Vec2 getCurrentPosition();
         cocos2d::Size getContentSize();
         cocos2d::Scene &getScene();

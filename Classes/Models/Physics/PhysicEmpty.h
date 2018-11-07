@@ -1,7 +1,6 @@
 #ifndef HOLDTHECOYOTE_MODELS_PHYSICS_PHYSICEMPTY_H
 #define HOLDTHECOYOTE_MODELS_PHYSICS_PHYSICEMPTY_H
 
-#include <cocos2d.h>
 #include "Physic.h"
 
 namespace HoldTheCoyote::Models::Physics {
@@ -18,7 +17,7 @@ namespace HoldTheCoyote::Models::Physics {
         PhysicEmpty &operator=(PhysicEmpty &&rhs) noexcept = delete;
 
     protected:
-        cocos2d::PhysicsBody &init();
+        EngineAbstraction::PhysicsBody &init();
 
     };
 }

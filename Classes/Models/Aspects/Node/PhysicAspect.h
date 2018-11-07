@@ -1,15 +1,15 @@
 #ifndef HOLDTHECOYOTE_MODELS_ASPECTS_NODE_PHYSICASPECT_H
 #define HOLDTHECOYOTE_MODELS_ASPECTS_NODE_PHYSICASPECT_H
 
-#include <cocos2d.h>
 #include "Aspect.h"
-#include "../../../Views/Node.h"
+#include "../../../EngineAbstraction/Interfaces/PhysicsBody.h"
+//#include <PhysicsBody.h>
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
     class PhysicAspect : virtual public Aspect {
     public:
-        PhysicAspect(cocos2d::PhysicsBody &physicBody);
+        PhysicAspect(EngineAbstraction::PhysicsBody &physicBody);
         virtual ~PhysicAspect() = default;
 
         PhysicAspect(PhysicAspect const &rhs) = delete;
@@ -23,7 +23,7 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     protected:
 
     private:
-        cocos2d::PhysicsBody &physicBody;
+        EngineAbstraction::PhysicsBody &physicBody;
     };
 }
 

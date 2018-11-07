@@ -23,6 +23,7 @@
 # THE SOFTWARE.
 # ****************************************************************************/
 
+enable_testing()
 cmake_minimum_required(VERSION 3.6)
 
 set(APP_NAME HoldTheCoyote)
@@ -31,7 +32,7 @@ project(${APP_NAME})
 
 if (NOT ANDROID)
     set(CMAKE_CXX_STANDARD 17)
-endif()
+endif ()
 
 set(COCOS2DX_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cocos2d)
 set(CMAKE_MODULE_PATH ${COCOS2DX_ROOT_PATH}/cmake/Modules/)
@@ -112,8 +113,12 @@ set(all_code_files
 if (NOT ANDROID)
     add_executable(${APP_NAME} ${all_code_files})
     #set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD 17)
-    #add_subdirectory(test)
+    add_subdirectory(test)
 else ()
+    target_compile_definitions(engine_abstraction
+            PRIVATE
+            ENGINE_USED=COCOS2DX
+            )
     add_library(${APP_NAME} SHARED ${all_code_files})
     add_subdirectory(${COCOS2DX_ROOT_PATH}/cocos/platform/android ${ENGINE_BINARY_PATH}/cocos/platform)
     target_link_libraries(${APP_NAME} PRIVATE -Wl,--whole-archive cpp_android_spec -Wl,--no-whole-archive)
@@ -121,8 +126,8 @@ endif ()
 
 target_link_libraries(${APP_NAME}
         PRIVATE
-            CommonClasses
-            cocos2d)
+        common_classes
+        cocos2d)
 
 target_include_directories(${APP_NAME}
         PRIVATE Classes

@@ -6,9 +6,13 @@ add_library(physics
 
 #set_property(TARGET physics PROPERTY CXX_STANDARD 17)
 
+target_include_directories(physics
+        PRIVATE
+        ../../EngineAbstraction/Interfaces/)
+
 include(CocosBuildSet)
 
 target_link_libraries(physics
         PRIVATE
-            cocos2d
+        engine_abstraction
         )

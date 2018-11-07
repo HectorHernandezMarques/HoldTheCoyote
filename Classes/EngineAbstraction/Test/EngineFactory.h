@@ -1,0 +1,28 @@
+#ifndef ENGINEABSTRACTION_TEST_ENGINEFACTORY_H
+#define ENGINEABSTRACTION_TEST_ENGINEFACTORY_H
+
+#include "../Interfaces/EngineFactory.h"
+
+namespace EngineAbstraction::Test {
+
+    class EngineFactory : public EngineAbstraction::EngineFactory {
+
+    public:
+        EngineFactory() = default;
+        virtual ~EngineFactory() = default;
+
+        EngineFactory(EngineFactory const &rhs) = delete;
+        EngineFactory &operator=(EngineFactory const &rhs) = delete;
+
+        PhysicsBody &createPhysicsBody() override;
+        PhysicsBody &createPhysicsBodyBox(Size &size) override;
+        PhysicsBody &createPhysicsBodyPolygon(const Vec2 **points, int count) override;
+        Vec2 &createVec2() override;
+
+    private:
+
+    };
+
+}
+
+#endif

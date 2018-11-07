@@ -1,5 +1,6 @@
 #include "Node.h"
-#include "../Models/Node.h"
+#include <Models/Node.h>
+#include <EngineAbstraction/Cocos/PhysicsBody.h>
 
 namespace HoldTheCoyote::Views {
     Node::Node(Models::Node &node, cocos2d::Scene &scene) :
@@ -14,7 +15,8 @@ namespace HoldTheCoyote::Views {
         this->nodeSprite.setAnchorPoint(node.getAnchorPoint());
         this->nodeSprite.setPosition(node.getInitialPosition());
         if (node.hasPhysic()) {
-            this->nodeSprite.setPhysicsBody(&node.getPhysicBody());
+            this->nodeSprite.setPhysicsBody(
+                    &static_cast<EngineAbstraction::Cocos::PhysicsBody &>(node.getPhysicBody()).getPhysicsBody());
         }
     }
 
@@ -50,8 +52,9 @@ namespace HoldTheCoyote::Views {
         this->nodeSprite.setTexture(texture);
     }
 
-    void Node::setPhysic(cocos2d::PhysicsBody &physicBody) {
-        this->nodeSprite.setPhysicsBody(&physicBody);
+    void Node::setPhysic(EngineAbstraction::PhysicsBody &physicBody) {
+        this->nodeSprite.setPhysicsBody(
+                &static_cast<EngineAbstraction::Cocos::PhysicsBody &>(physicBody).getPhysicsBody());
     }
 
     cocos2d::Vec2 Node::getCurrentPosition() {

@@ -1,20 +1,24 @@
-add_library(Views
+add_library(views
+        Node.cpp
         Character.cpp
         HolderButton.cpp
-        Node.cpp
         )
 
-#set_property(TARGET Views PROPERTY CXX_STANDARD 17)
+#set_property(TARGET views PROPERTY CXX_STANDARD 17)
 
-target_include_directories(Views
+target_include_directories(views
+        PUBLIC
+        ./
+        ../
         PRIVATE
-            ../../Classes
+        ../EngineAbstraction/Interfaces/
         )
 
 include(CocosBuildSet)
 
-target_link_libraries(Views
+target_link_libraries(views
+        PUBLIC
+        models
         PRIVATE
             cocos2d
-            Models
         )

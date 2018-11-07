@@ -3,7 +3,6 @@
 
 #include <cocos2d.h>
 #include "Aspect.h"
-#include "../../../Views/Node.h"
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 

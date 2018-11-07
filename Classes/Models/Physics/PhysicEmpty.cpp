@@ -1,12 +1,13 @@
 #include "PhysicEmpty.h"
+#include <EngineFactory.h>
 
 namespace HoldTheCoyote::Models::Physics {
 
     PhysicEmpty::PhysicEmpty() : Physic(this->init()) {
     }
 
-    cocos2d::PhysicsBody &PhysicEmpty::init() {
-        cocos2d::PhysicsBody &result = *cocos2d::PhysicsBody::create();
+    EngineAbstraction::PhysicsBody &PhysicEmpty::init() {
+        EngineAbstraction::PhysicsBody &result = EngineAbstraction::EngineFactory::getInstance().createPhysicsBody();
         result.setDynamic(false);
         result.setCategoryBitmask(false);
         result.setContactTestBitmask(false);

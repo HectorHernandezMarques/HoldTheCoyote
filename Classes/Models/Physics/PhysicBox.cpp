@@ -1,12 +1,14 @@
 #include "PhysicBox.h"
+#include <EngineFactory.h>
 
 namespace HoldTheCoyote::Models::Physics {
 
-    PhysicBox::PhysicBox(int bitmask, cocos2d::Size size) : Physic(this->init(bitmask, size)), size(size) {
+    PhysicBox::PhysicBox(int bitmask, EngineAbstraction::Size size) : Physic(this->init(bitmask, size)) {
     }
 
-    cocos2d::PhysicsBody &PhysicBox::init(int bitmask, cocos2d::Size &size) {
-        cocos2d::PhysicsBody &result = *cocos2d::PhysicsBody::createBox(size);
+    EngineAbstraction::PhysicsBody &PhysicBox::init(int bitmask, EngineAbstraction::Size &size) {
+        EngineAbstraction::PhysicsBody &result = EngineAbstraction::EngineFactory::getInstance().createPhysicsBodyBox(
+                size);
         result.setCollisionBitmask(bitmask);
         return result;
     }

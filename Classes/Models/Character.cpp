@@ -2,7 +2,7 @@
 
 namespace HoldTheCoyote::Models {
 
-    Character::Character() : Node() {
+    Character::Character() : Node(cocos2d::Vec2::ZERO) {
 
     }
 

@@ -3,13 +3,12 @@
 
 #include <cocos2d.h>
 #include "Aspect.h"
-#include "../../../Views/Node.h"
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
     class AddEventListenerWithSceneGraphPriorityAspect : virtual public Aspect {
     public:
-        AddEventListenerWithSceneGraphPriorityAspect(cocos2d::EventListener *listener);
+        AddEventListenerWithSceneGraphPriorityAspect(cocos2d::EventListener &listener);
         virtual ~AddEventListenerWithSceneGraphPriorityAspect() = default;
 
         AddEventListenerWithSceneGraphPriorityAspect(AddEventListenerWithSceneGraphPriorityAspect const &rhs) = delete;
@@ -23,7 +22,7 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     protected:
 
     private:
-        cocos2d::EventListener *listener;
+        cocos2d::EventListener &listener;
     };
 }
 

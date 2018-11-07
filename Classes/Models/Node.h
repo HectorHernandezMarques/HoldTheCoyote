@@ -20,7 +20,7 @@ namespace HoldTheCoyote::Models {
     class Node {
 
     public:
-        Node(cocos2d::Vec2 position = cocos2d::Vec2::ZERO, cocos2d::Vec2 anchorPoint = cocos2d::Vec2::ZERO,
+        Node(cocos2d::Vec2 position, cocos2d::Vec2 anchorPoint = cocos2d::Vec2::ANCHOR_MIDDLE,
              std::string texture = "", float rotation = 0.0,
              Physics::Physic *physic = new Physics::PhysicEmpty());
         virtual ~Node() = default;
@@ -36,7 +36,7 @@ namespace HoldTheCoyote::Models {
         bool hasPhysic();
         void runAction(cocos2d::Action *action);
         void stopAction(cocos2d::Action *action);
-        void addEventListenerWithSceneGraphPriority(cocos2d::EventListener *listener);
+        void addEventListenerWithSceneGraphPriority(cocos2d::EventListener &listener);
 
         cocos2d::Vec2 getInitialPosition();
         cocos2d::Vec2 getPosition();
@@ -45,8 +45,8 @@ namespace HoldTheCoyote::Models {
         std::string getTexture();
         float getRotation();
         Physics::Physic &getPhysic();
-        cocos2d::PhysicsBody &getPhysicBody();
-        cocos2d::Vec2 getVelocity();
+        EngineAbstraction::PhysicsBody &getPhysicBody();
+        EngineAbstraction::Vec2 getVelocity();
         cocos2d::Scene &getScene();
         void setPosition(cocos2d::Vec2 position);
         void setAnchorPoint(cocos2d::Vec2 anchorPoint);
@@ -57,7 +57,7 @@ namespace HoldTheCoyote::Models {
         void setCategoryBitmask(int bitmask);
         void setCollisionBitmask(int bitmask);
         void setContactTestBitmask(int bitmask);
-        void setVelocity(cocos2d::Vec2 velocity);
+        void setVelocity(EngineAbstraction::Vec2 velocity);
         void setVelocityLimit(float velocity);
 
     private:
