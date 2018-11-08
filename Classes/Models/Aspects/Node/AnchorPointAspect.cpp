@@ -2,7 +2,7 @@
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
-    AnchorPointAspect::AnchorPointAspect(cocos2d::Vec2 anchorPoint) : Aspect(), anchorPoint(anchorPoint) {
+    AnchorPointAspect::AnchorPointAspect(EngineAbstraction::Vec2 anchorPoint) : Aspect(), anchorPoint(anchorPoint) {
     }
 
     void AnchorPointAspect::visit(Views::Node &node) {

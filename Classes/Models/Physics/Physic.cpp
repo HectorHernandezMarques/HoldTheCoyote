@@ -17,7 +17,7 @@ namespace HoldTheCoyote::Models::Physics {
         return this->physicsBody;
     }
 
-    EngineAbstraction::Vec2 Physic::getVelocity() {
+    EngineAbstraction::Vec2 &Physic::getVelocity() {
         assert(&this->physicsBody);
 
         return this->physicsBody.getVelocity();
@@ -53,7 +53,7 @@ namespace HoldTheCoyote::Models::Physics {
         this->physicsBody.setRotationEnable(enable);
     }
 
-    void Physic::setVelocity(EngineAbstraction::Vec2 velocity) {
+    void Physic::setVelocity(EngineAbstraction::Vec2 &velocity) {
         assert(&this->physicsBody);
         assert(&velocity);
 

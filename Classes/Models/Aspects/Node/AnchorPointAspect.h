@@ -1,14 +1,14 @@
 #ifndef HOLDTHECOYOTE_MODELS_ASPECTS_NODE_ANCHORPOINTASPECT_H
 #define HOLDTHECOYOTE_MODELS_ASPECTS_NODE_ANCHORPOINTASPECT_H
 
-#include <cocos2d.h>
 #include "Aspect.h"
+#include "../../../EngineAbstraction/Interfaces/Vec2.h"
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
     class AnchorPointAspect : virtual public Aspect {
     public:
-        AnchorPointAspect(cocos2d::Vec2 anchorPoint);
+        AnchorPointAspect(EngineAbstraction::Vec2 anchorPoint);
         virtual ~AnchorPointAspect() = default;
 
         AnchorPointAspect(AnchorPointAspect const &rhs) = delete;
@@ -22,7 +22,7 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     protected:
 
     private:
-        cocos2d::Vec2 anchorPoint;
+        EngineAbstraction::Vec2 anchorPoint;
     };
 }
 

@@ -2,7 +2,7 @@
 
 namespace HoldTheCoyote::Models {
 
-    HolderButton::HolderButton() : Node(cocos2d::Vec2::ZERO) {
+    HolderButton::HolderButton() : Node(EngineAbstraction::EngineFactory::getInstance().createVec2AnchorMiddle()) {
 
     }
 

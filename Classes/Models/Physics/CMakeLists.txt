@@ -10,8 +10,6 @@ target_include_directories(physics
         PRIVATE
         ../../EngineAbstraction/Interfaces/)
 
-include(CocosBuildSet)
-
 target_link_libraries(physics
         PRIVATE
         engine_abstraction

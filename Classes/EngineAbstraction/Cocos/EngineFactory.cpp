@@ -25,4 +25,12 @@ namespace EngineAbstraction::Cocos {
     EngineAbstraction::Vec2 &EngineFactory::createVec2() {
         return *new Cocos::Vec2(*new cocos2d::Vec2());
     }
+
+    EngineAbstraction::Vec2 &EngineFactory::createVec2Zero() {
+        return *new Cocos::Vec2(cocos2d::Vec2::ZERO);
+    }
+
+    EngineAbstraction::Vec2 &EngineFactory::createVec2AnchorMiddle() {
+        return *new Cocos::Vec2(cocos2d::Vec2::ANCHOR_MIDDLE);
+    }
 }

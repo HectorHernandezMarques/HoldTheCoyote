@@ -6,10 +6,6 @@ namespace EngineAbstraction::Cocos {
 
     }
 
-    cocos2d::Vec2 Vec2::getVec2() const {
-        return this->vec2;
-    }
-
     Vec2 &Vec2::operator=(Vec2 const &rhs) {
         this->vec2 = rhs.vec2;
         return *this;
@@ -19,4 +15,10 @@ namespace EngineAbstraction::Cocos {
         this->vec2 = std::move(rhs.vec2);
         return *this;
     }
+
+    cocos2d::Vec2 Vec2::getVec2() const {
+        return this->vec2;
+    }
+
+
 }

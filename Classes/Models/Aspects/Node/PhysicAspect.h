@@ -3,7 +3,6 @@
 
 #include "Aspect.h"
 #include "../../../EngineAbstraction/Interfaces/PhysicsBody.h"
-//#include <PhysicsBody.h>
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 

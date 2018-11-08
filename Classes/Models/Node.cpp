@@ -3,7 +3,8 @@
 
 namespace HoldTheCoyote::Models {
 
-    Node::Node(cocos2d::Vec2 position, cocos2d::Vec2 anchorPoint, std::string texture, float rotation,
+    Node::Node(EngineAbstraction::Vec2 &position, EngineAbstraction::Vec2 &anchorPoint, std::string texture,
+               float rotation,
                Physics::Physic *physic) :
             position(position), anchorPoint(anchorPoint), texture(std::move(texture)), rotation(rotation),
             nodeObserver(nullptr),
@@ -25,23 +26,23 @@ namespace HoldTheCoyote::Models {
         return this->physic != nullptr;
     }
 
-    void Node::stopAction(cocos2d::Action *action) {
+    void Node::stopAction(EngineAbstraction::Action *action) {
         if (action) {
-            this->notify(*(new Aspects::Node::StopActionAspect(action)));
+            this->notify(*new Aspects::Node::StopActionAspect(*action));
         }
     }
 
-    void Node::runAction(cocos2d::Action *action) {
-        this->notify(*(new Aspects::Node::RunActionAspect(action)));
+    void Node::runAction(EngineAbstraction::Action *action) {
+        this->notify(*(new Aspects::Node::RunActionAspect(*action)));
     }
 
-    void Node::addEventListenerWithSceneGraphPriority(cocos2d::EventListener &listener) {
+    void Node::addEventListenerWithSceneGraphPriority(EngineAbstraction::EventListener &listener) {
         assert(&listener);
 
         this->notify(*(new Aspects::Node::AddEventListenerWithSceneGraphPriorityAspect(listener)));
     }
 
-    cocos2d::Vec2 Node::getInitialPosition() {
+    EngineAbstraction::Vec2 &Node::getInitialPosition() {
         return this->position;
     }
 
@@ -57,7 +58,7 @@ namespace HoldTheCoyote::Models {
         return this->nodeObserver->getContentSize();
     }
 
-    cocos2d::Vec2 Node::getAnchorPoint() {
+    EngineAbstraction::Vec2 &Node::getAnchorPoint() {
         return this->anchorPoint;
     }
 
@@ -81,7 +82,7 @@ namespace HoldTheCoyote::Models {
         return this->physic->getPhysic();
     }
 
-    EngineAbstraction::Vec2 Node::getVelocity() {
+    EngineAbstraction::Vec2 &Node::getVelocity() {
         assert(this->physic);
 
         return this->physic->getVelocity();
@@ -91,12 +92,12 @@ namespace HoldTheCoyote::Models {
         return this->nodeObserver->getScene();
     }
 
-    void Node::setPosition(cocos2d::Vec2 position) {
+    void Node::setPosition(EngineAbstraction::Vec2 &position) {
         this->position = position;
         this->notify(*(new Aspects::Node::PositionAspect(this->position)));
     }
 
-    void Node::setAnchorPoint(cocos2d::Vec2 anchorPoint) {
+    void Node::setAnchorPoint(EngineAbstraction::Vec2 &anchorPoint) {
         this->anchorPoint = anchorPoint;
         this->notify(*(new Aspects::Node::AnchorPointAspect(this->anchorPoint)));
     }
@@ -144,7 +145,7 @@ namespace HoldTheCoyote::Models {
         this->notify(*(new Aspects::Node::PhysicAspect(this->physic->getPhysic())));
     }
 
-    void Node::setVelocity(EngineAbstraction::Vec2 velocity) {
+    void Node::setVelocity(EngineAbstraction::Vec2 &velocity) {
         assert(&velocity);
 
         this->physic->setVelocity(velocity);

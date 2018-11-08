@@ -20,7 +20,10 @@ namespace EngineAbstraction {
         virtual PhysicsBody &createPhysicsBody() = 0;
         virtual PhysicsBody &createPhysicsBodyBox(Size &size) = 0;
         virtual PhysicsBody &createPhysicsBodyPolygon(const Vec2 **points, int count) = 0;
+
         virtual Vec2 &createVec2() = 0;
+        virtual Vec2 &createVec2Zero() = 0;
+        virtual Vec2 &createVec2AnchorMiddle() = 0;
 
     protected:
         EngineFactory() = default;

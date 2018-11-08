@@ -2,8 +2,8 @@
 
 namespace EngineAbstraction::Cocos {
 
-    PhysicsShape::PhysicsShape(cocos2d::PhysicsShape &physicsShape) : physicsShape(
-            physicsShape) {
+    PhysicsShape::PhysicsShape(cocos2d::PhysicsShape &physicsShape) :
+            physicsShape(physicsShape) {
 
     }
 

@@ -18,6 +18,8 @@ namespace EngineAbstraction::Cocos {
         PhysicsBody &createPhysicsBodyBox(Size &size) override;
         PhysicsBody &createPhysicsBodyPolygon(const Vec2 **points, int count) override;
         Vec2 &createVec2() override;
+        Vec2 &createVec2Zero() override;
+        Vec2 &createVec2AnchorMiddle() override;
 
     private:
 

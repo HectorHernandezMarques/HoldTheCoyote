@@ -16,9 +16,7 @@ target_include_directories(node_aspects
         ../../../EngineAbstraction/Interfaces/
         )
 
-include(CocosBuildSet)
-
 target_link_libraries(node_aspects
         PRIVATE
-            cocos2d
+        engine_abstraction
         )

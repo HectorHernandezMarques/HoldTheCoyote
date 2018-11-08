@@ -2,7 +2,7 @@
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
-    PositionAspect::PositionAspect(cocos2d::Vec2 &position) : position(position) {
+    PositionAspect::PositionAspect(EngineAbstraction::Vec2 &position) : position(position) {
     }
 
     void PositionAspect::visit(Views::Node &node) {

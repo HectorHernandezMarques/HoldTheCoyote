@@ -1,14 +1,14 @@
 #ifndef HOLDTHECOYOTE_MODELS_ASPECTS_NODE_STOPACTIONASPECT_H
 #define HOLDTHECOYOTE_MODELS_ASPECTS_NODE_STOPACTIONASPECT_H
 
-#include <cocos2d.h>
 #include "Aspect.h"
+#include "../../../EngineAbstraction/Interfaces/Action.h"
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
     class StopActionAspect : virtual public Aspect {
     public:
-        StopActionAspect(cocos2d::Action *animationAction);
+        StopActionAspect(EngineAbstraction::Action &animationAction);
         virtual ~StopActionAspect() = default;
 
         StopActionAspect(StopActionAspect const &rhs) = delete;
@@ -22,7 +22,7 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     protected:
 
     private:
-        cocos2d::Action *animationAction;
+        EngineAbstraction::Action &animationAction;
     };
 }
 

@@ -1,8 +1,8 @@
 #ifndef HOLDTHECOYOTE_MODELS_ASPECTS_NODE_TEXTUREASPECT_H
 #define HOLDTHECOYOTE_MODELS_ASPECTS_NODE_TEXTUREASPECT_H
 
-#include <cocos2d.h>
 #include "Aspect.h"
+#include <string>
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 

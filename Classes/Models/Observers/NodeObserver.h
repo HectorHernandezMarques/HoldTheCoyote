@@ -6,6 +6,17 @@ namespace HoldTheCoyote::Models::Aspects::Node {
 
 }
 
+
+namespace cocos2d {
+    class Scene;
+
+    class Sprite;
+
+    class Vec2;
+
+    class Size;
+}
+
 namespace HoldTheCoyote::Models::Observers {
 
     class NodeObserver {

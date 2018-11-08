@@ -1,12 +1,24 @@
 #ifndef HOLDTHECOYOTE_VIEWS_NODE_H
 #define HOLDTHECOYOTE_VIEWS_NODE_H
 
-#include <cocos2d.h>
+#include "../EngineAbstraction/Interfaces/EventListener.h"
+#include "../EngineAbstraction/Interfaces/Vec2.h"
+#include "../EngineAbstraction/Interfaces/Action.h"
 #include "../EngineAbstraction/Interfaces/PhysicsBody.h"
 #include "../Models/Observers/NodeObserver.h"
 
 namespace HoldTheCoyote::Models {
     class Node;
+}
+
+namespace cocos2d {
+    class Scene;
+
+    class Sprite;
+
+    class Vec2;
+
+    class Size;
 }
 
 namespace HoldTheCoyote::Views {
@@ -30,17 +42,17 @@ namespace HoldTheCoyote::Views {
 
         cocos2d::Sprite &getNodeSprite();
 
-        void setPosition(cocos2d::Vec2 position);
+        void setPosition(EngineAbstraction::Vec2 &position);
         void setRotation(float rotation);
-        void setAnchorPoint(cocos2d::Vec2 anchorPoint);
+        void setAnchorPoint(EngineAbstraction::Vec2 &anchorPoint);
         void setTexture(std::string texture);
         void setPhysic(EngineAbstraction::PhysicsBody &physicBody);
         cocos2d::Vec2 getCurrentPosition();
         cocos2d::Size getContentSize();
         cocos2d::Scene &getScene();
-        void runAction(cocos2d::Action *action);
-        void stopAction(cocos2d::Action *action);
-        void addEventListenerWithSceneGraphPriority(cocos2d::EventListener *listener);
+        void runAction(EngineAbstraction::Action &action);
+        void stopAction(EngineAbstraction::Action &action);
+        void addEventListenerWithSceneGraphPriority(EngineAbstraction::EventListener &listener);
 
     private:
         cocos2d::Sprite &nodeSprite;

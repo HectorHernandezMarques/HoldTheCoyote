@@ -1,7 +1,6 @@
 #ifndef HOLDTHECOYOTE_MODELS_ASPECTS_NODE_ASPECT_H
 #define HOLDTHECOYOTE_MODELS_ASPECTS_NODE_ASPECT_H
 
-#include <cocos2d.h>
 #include "../../../Views/Node.h"
 
 namespace HoldTheCoyote::Models::Aspects::Node {

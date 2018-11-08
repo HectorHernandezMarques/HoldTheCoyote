@@ -1,21 +1,15 @@
 #include "RunActionAspect.h"
 
-namespace HoldTheCoyote {
-	namespace Models {
-		namespace Aspects {
-			namespace Node {
+namespace HoldTheCoyote::Models::Aspects::Node {
 
-				RunActionAspect::RunActionAspect(cocos2d::Action *action) : action(action) {
-				}
+    RunActionAspect::RunActionAspect(EngineAbstraction::Action &action) : action(action) {
+    }
 
-				RunActionAspect::~RunActionAspect() {
+    RunActionAspect::~RunActionAspect() {
 
-				}
+    }
 
-				void RunActionAspect::visit(Views::Node &node) {
-					node.runAction(this->action);
-				}
-			}
-		}
-	}
+    void RunActionAspect::visit(Views::Node &node) {
+        node.runAction(this->action);
+    }
 }

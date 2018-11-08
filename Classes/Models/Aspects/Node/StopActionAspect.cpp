@@ -2,7 +2,7 @@
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
-    StopActionAspect::StopActionAspect(cocos2d::Action *animationAction) : animationAction(animationAction) {
+    StopActionAspect::StopActionAspect(EngineAbstraction::Action &animationAction) : animationAction(animationAction) {
     }
 
     void StopActionAspect::visit(Views::Node &node) {

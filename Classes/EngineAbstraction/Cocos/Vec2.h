@@ -1,7 +1,7 @@
 #ifndef ENGINEABSTRACTION_COCOS_VEC2_H
 #define ENGINEABSTRACTION_COCOS_VEC2_H
 
-#include <Interfaces/Vec2.h>
+#include "../Interfaces/Vec2.h"
 #include <cocos2d.h>
 
 namespace EngineAbstraction::Cocos {

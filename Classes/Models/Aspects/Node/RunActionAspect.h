@@ -1,14 +1,14 @@
 #ifndef HOLDTHECOYOTE_MODELS_ASPECTS_NODE_RUNACTIONASPECT_H
 #define HOLDTHECOYOTE_MODELS_ASPECTS_NODE_RUNACTIONASPECT_H
 
-#include <cocos2d.h>
 #include "Aspect.h"
+#include "../../../EngineAbstraction/Interfaces/Action.h"
 
 namespace HoldTheCoyote::Models::Aspects::Node {
 
     class RunActionAspect : virtual public Aspect {
     public:
-        RunActionAspect(cocos2d::Action *action);
+        RunActionAspect(EngineAbstraction::Action &action);
         virtual ~RunActionAspect();
 
         RunActionAspect(RunActionAspect const &rhs) = delete;
@@ -22,7 +22,7 @@ namespace HoldTheCoyote::Models::Aspects::Node {
     protected:
 
     private:
-        cocos2d::Action *action;
+        EngineAbstraction::Action &action;
     };
 }
 

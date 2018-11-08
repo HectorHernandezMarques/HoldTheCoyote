@@ -8,7 +8,6 @@
 namespace EngineAbstraction {
     class PhysicsBody {
     public:
-        PhysicsBody() = default;
         virtual Vec2 &getVelocity() = 0;
         virtual void setDynamic(bool dynamic) = 0;
         virtual void setCategoryBitmask(int categoryBitmask) = 0;

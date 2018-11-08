@@ -1,5 +1,7 @@
 add_library(cocos_engine
+        Action.cpp
         EngineFactory.cpp
+        EventListener.cpp
         PhysicsBody.cpp
         PhysicsShape.cpp
         Size.cpp
