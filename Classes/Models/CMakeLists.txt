@@ -14,11 +14,8 @@ target_include_directories(models
 
 #set_property(TARGET models PROPERTY CXX_STANDARD 17)
 
-include(CocosBuildSet)
-
 target_link_libraries(models
         PRIVATE
-            cocos2d
             physics
             node_aspects
         )

@@ -2,7 +2,7 @@
 
 namespace HoldTheCoyote::Views {
 
-    Character::Character(HoldTheCoyote::Models::Node &node, cocos2d::Scene &scene) : Node(node, scene) {
+    Character::Character(Models::Node &node, EngineAbstraction::Scene &scene) : Node(node, scene) {
 
     }
 }

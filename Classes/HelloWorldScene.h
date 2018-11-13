@@ -30,6 +30,7 @@
 #include "Models/HolderButton.h"
 #include "Views/Character.h"
 #include "Views/HolderButton.h"
+#include "EngineAbstraction/Cocos/EngineFactory.h"
 
 namespace HoldTheCoyote {
 

@@ -1,8 +1,6 @@
 #ifndef HOLDTHECOYOTE_MODELS_NODE_H
 #define HOLDTHECOYOTE_MODELS_NODE_H
 
-#include <cocos2d.h>
-
 #include "../EngineAbstraction/Interfaces/EngineFactory.h"
 #include "Observers/NodeObserver.h"
 #include "Aspects/Node/AddEventListenerWithSceneGraphPriorityAspect.h"
@@ -41,15 +39,15 @@ namespace HoldTheCoyote::Models {
         void addEventListenerWithSceneGraphPriority(EngineAbstraction::EventListener &listener);
 
         EngineAbstraction::Vec2 &getInitialPosition();
-        cocos2d::Vec2 getPosition();
-        cocos2d::Size getContentSize();
+        EngineAbstraction::Vec2 getPosition();
+        EngineAbstraction::Size getContentSize();
         EngineAbstraction::Vec2 &getAnchorPoint();
         std::string getTexture();
         float getRotation();
         Physics::Physic &getPhysic();
         EngineAbstraction::PhysicsBody &getPhysicBody();
         EngineAbstraction::Vec2 &getVelocity();
-        cocos2d::Scene &getScene();
+        EngineAbstraction::Scene &getScene();
         void setPosition(EngineAbstraction::Vec2 &position);
         void setAnchorPoint(EngineAbstraction::Vec2 &anchorPoint);
         void setTexture(std::string texture);

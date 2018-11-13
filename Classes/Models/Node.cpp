@@ -1,5 +1,6 @@
 #include "Node.h"
 #include <EngineFactory.h>
+#include <cassert>
 
 namespace HoldTheCoyote::Models {
 
@@ -46,13 +47,13 @@ namespace HoldTheCoyote::Models {
         return this->position;
     }
 
-    cocos2d::Vec2 Node::getPosition() {
+    EngineAbstraction::Vec2 Node::getPosition() {
         assert(this->nodeObserver);
 
         return this->nodeObserver->getCurrentPosition();
     }
 
-    cocos2d::Size Node::getContentSize() {
+    EngineAbstraction::Size Node::getContentSize() {
         assert(this->nodeObserver);
 
         return this->nodeObserver->getContentSize();
@@ -88,7 +89,7 @@ namespace HoldTheCoyote::Models {
         return this->physic->getVelocity();
     }
 
-    cocos2d::Scene &Node::getScene() {
+    EngineAbstraction::Scene &Node::getScene() {
         return this->nodeObserver->getScene();
     }
 

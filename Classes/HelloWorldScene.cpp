@@ -94,11 +94,15 @@ namespace HoldTheCoyote {
         }
 
         Models::Character *characterModel = new Models::Character();
-        Views::Character *characterView = new Views::Character(*characterModel, *this);
-        //characterView->spawn();
+        Views::Character *characterView = new Views::Character(*characterModel,
+                                                               static_cast<EngineAbstraction::Cocos::EngineFactory &>(EngineAbstraction::EngineFactory::getInstance()).createScene(
+                                                                       *this));
+        characterView->spawn();
 
         Models::HolderButton *holderButtonModel = new Models::HolderButton();
-        Views::HolderButton *holderButtonView = new Views::HolderButton(*holderButtonModel, *this);
+        Views::HolderButton *holderButtonView = new Views::HolderButton(*holderButtonModel,
+                                                                        static_cast<EngineAbstraction::Cocos::EngineFactory &>(EngineAbstraction::EngineFactory::getInstance()).createScene(
+                                                                                *this));
         //holderButtonView->spawn();
 
         return true;

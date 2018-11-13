@@ -1,6 +1,9 @@
 #include "EngineFactory.h"
+
 #include "PhysicsBody.h"
+#include "Scene.h"
 #include "Size.h"
+#include "Sprite.h"
 #include "Vec2.h"
 
 namespace EngineAbstraction::Cocos {
@@ -32,5 +35,17 @@ namespace EngineAbstraction::Cocos {
 
     EngineAbstraction::Vec2 &EngineFactory::createVec2AnchorMiddle() {
         return *new Cocos::Vec2(cocos2d::Vec2::ANCHOR_MIDDLE);
+    }
+
+    EngineAbstraction::Sprite &EngineFactory::createSprite() {
+        return *new Sprite(*cocos2d::Sprite::create());
+    }
+
+    EngineAbstraction::Sprite &EngineFactory::createSprite(std::string filename) {
+        return *new Sprite(*cocos2d::Sprite::create(filename));
+    }
+
+    EngineAbstraction::Scene &EngineFactory::createScene(cocos2d::Scene &scene) {
+        return *new Cocos::Scene(scene);
     }
 }

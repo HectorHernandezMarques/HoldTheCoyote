@@ -21,4 +21,12 @@ namespace EngineAbstraction::Test {
     EngineAbstraction::Vec2 &EngineFactory::createVec2() {
         return *new Vec2();
     }
+
+    EngineAbstraction::Vec2 &EngineFactory::createVec2Zero() {
+        return *new Vec2();
+    }
+
+    EngineAbstraction::Vec2 &EngineFactory::createVec2AnchorMiddle() {
+        return *new Vec2();
+    }
 }

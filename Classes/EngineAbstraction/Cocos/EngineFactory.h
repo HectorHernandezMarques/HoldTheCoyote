@@ -3,6 +3,10 @@
 
 #include "../Interfaces/EngineFactory.h"
 
+namespace cocos2d {
+    class Scene;
+}
+
 namespace EngineAbstraction::Cocos {
 
     class EngineFactory : public EngineAbstraction::EngineFactory {
@@ -17,9 +21,14 @@ namespace EngineAbstraction::Cocos {
         PhysicsBody &createPhysicsBody() override;
         PhysicsBody &createPhysicsBodyBox(Size &size) override;
         PhysicsBody &createPhysicsBodyPolygon(const Vec2 **points, int count) override;
+
         Vec2 &createVec2() override;
         Vec2 &createVec2Zero() override;
         Vec2 &createVec2AnchorMiddle() override;
+        Sprite &createSprite() override;
+        Sprite &createSprite(std::string filename) override;
+
+        Scene &createScene(cocos2d::Scene &scene);
 
     private:
 

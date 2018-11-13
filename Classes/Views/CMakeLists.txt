@@ -14,11 +14,7 @@ target_include_directories(views
         ../EngineAbstraction/Interfaces/
         )
 
-include(CocosBuildSet)
-
 target_link_libraries(views
         PUBLIC
         models
-        PRIVATE
-            cocos2d
         )

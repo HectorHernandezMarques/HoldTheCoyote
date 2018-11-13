@@ -4,6 +4,7 @@
 namespace EngineAbstraction {
     class Vec2 {
     public:
+
     };
 }
 

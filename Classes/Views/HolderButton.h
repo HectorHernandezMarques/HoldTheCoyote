@@ -8,7 +8,7 @@ namespace HoldTheCoyote::Views {
     class HolderButton : public Node {
 
     public:
-        HolderButton(Models::Node &node, cocos2d::Scene &scene);
+        HolderButton(Models::Node &node, EngineAbstraction::Scene &scene);
         ~HolderButton() override = default;
 
         HolderButton(HolderButton const &rhs) = delete;

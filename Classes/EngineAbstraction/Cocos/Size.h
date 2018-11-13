@@ -9,7 +9,7 @@ namespace EngineAbstraction::Cocos {
     class Size : public EngineAbstraction::Size {
 
     public:
-        Size(cocos2d::Size size);
+        Size(const cocos2d::Size &size);
         virtual ~Size() = default;
 
         Size(Size const &rhs) = delete;
@@ -18,10 +18,10 @@ namespace EngineAbstraction::Cocos {
         Size(Size &&rhs) noexcept = delete;
         Size &operator=(Size &&rhs) noexcept = delete;
 
-        cocos2d::Size &getSize();
+        const cocos2d::Size &getSize() const;
 
     private:
-        cocos2d::Size size;
+        const cocos2d::Size &size;
 
     };
 
