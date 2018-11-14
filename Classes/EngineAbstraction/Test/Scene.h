@@ -17,6 +17,9 @@ namespace EngineAbstraction::Test {
         Scene(Scene &&rhs) noexcept = delete;
         Scene &operator=(Scene &&rhs) noexcept = delete;
 
+        void addChild(EngineAbstraction::Sprite &child) override;
+        void removeChild(EngineAbstraction::Sprite &child) override;
+
     private:
 
     };

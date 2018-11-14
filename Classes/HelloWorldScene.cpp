@@ -22,6 +22,8 @@
  THE SOFTWARE.
  ****************************************************************************/
 
+#include <EngineAbstraction/Cocos/Sprite.h>
+#include <EngineAbstraction/Cocos/Scene.h>
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
@@ -94,15 +96,14 @@ namespace HoldTheCoyote {
         }
 
         Models::Character *characterModel = new Models::Character();
+        characterModel->setTexture("HelloWorld.png");
         Views::Character *characterView = new Views::Character(*characterModel,
                                                                static_cast<EngineAbstraction::Cocos::EngineFactory &>(EngineAbstraction::EngineFactory::getInstance()).createScene(
                                                                        *this));
         characterView->spawn();
 
         Models::HolderButton *holderButtonModel = new Models::HolderButton();
-        Views::HolderButton *holderButtonView = new Views::HolderButton(*holderButtonModel,
-                                                                        static_cast<EngineAbstraction::Cocos::EngineFactory &>(EngineAbstraction::EngineFactory::getInstance()).createScene(
-                                                                                *this));
+
         //holderButtonView->spawn();
 
         return true;

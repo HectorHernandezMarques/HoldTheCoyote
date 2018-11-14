@@ -28,7 +28,7 @@ namespace EngineAbstraction::Cocos {
         Sprite &createSprite() override;
         Sprite &createSprite(std::string filename) override;
 
-        Scene &createScene(cocos2d::Scene &scene);
+        EngineAbstraction::Scene &createScene(cocos2d::Scene &scene);
 
     private:
 

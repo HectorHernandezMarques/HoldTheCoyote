@@ -26,7 +26,7 @@ namespace EngineAbstraction::Cocos {
     }
 
     EngineAbstraction::Vec2 &EngineFactory::createVec2() {
-        return *new Cocos::Vec2(*new cocos2d::Vec2());
+        return *new Cocos::Vec2(cocos2d::Vec2());
     }
 
     EngineAbstraction::Vec2 &EngineFactory::createVec2Zero() {

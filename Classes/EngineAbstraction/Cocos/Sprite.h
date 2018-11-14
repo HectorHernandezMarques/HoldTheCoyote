@@ -28,7 +28,7 @@ namespace EngineAbstraction::Cocos {
         const Size &getContentSize() const override;
         EngineAbstraction::EventDispatcher &getEventDispatcher() const override;
 
-        void setPhysicsBody(EngineAbstraction::PhysicsBody &physicsBody);
+        void setPhysicsBody(EngineAbstraction::PhysicsBody &physicsBody) override;
         void runAction(EngineAbstraction::Action &action) override;
         void stopAction(EngineAbstraction::Action &action) override;
 

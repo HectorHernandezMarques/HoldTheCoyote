@@ -3,11 +3,6 @@
 
 namespace HoldTheCoyote::Models::Aspects::Node { //indirect cicle
     class Aspect;
-
-}
-
-namespace EngineAbstraction {
-    class Scene;
 }
 
 namespace HoldTheCoyote::Models::Observers {

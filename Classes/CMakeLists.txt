@@ -17,7 +17,8 @@ endif ()
 
 target_link_libraries(common_classes
         PRIVATE
-            cocos2d
+        cocos2d
+        cocos_engine
         #controllers
         models
         views)
