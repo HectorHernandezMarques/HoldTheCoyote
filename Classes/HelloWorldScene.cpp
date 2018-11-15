@@ -32,7 +32,13 @@ USING_NS_CC;
 namespace HoldTheCoyote {
 
     Scene *HelloWorld::createScene() {
-        return HelloWorld::create();
+        auto scene = Scene::createWithPhysics();
+        auto layer = HelloWorld::create();
+
+        scene->getPhysicsWorld()->setGravity(Vec2(0.0, 360));
+
+        scene->addChild(layer);
+        return scene;
     }
 
 // Print useful error message instead of segfaulting when files are not there.

@@ -11,7 +11,7 @@ namespace EngineAbstraction::Cocos {
 
     public:
         Sprite(cocos2d::Sprite &sprite);
-        virtual ~Sprite() = default;
+        ~Sprite() override = default;
 
         Sprite(Sprite const &rhs) = delete;
         Sprite &operator=(Sprite const &rhs) = delete;

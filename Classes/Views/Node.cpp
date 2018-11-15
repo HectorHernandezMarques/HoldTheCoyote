@@ -16,7 +16,7 @@ namespace HoldTheCoyote::Views {
         this->nodeSprite.setAnchorPoint(node.getAnchorPoint());
         this->nodeSprite.setPosition(node.getInitialPosition());
         if (node.hasPhysic()) {
-            //this->nodeSprite.setPhysicsBody(node.getPhysicBody());
+            this->nodeSprite.setPhysicsBody(node.getPhysicBody());
         }
     }
 
